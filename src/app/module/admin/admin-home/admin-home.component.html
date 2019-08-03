@@ -1,0 +1,100 @@
+<div class="container mt-20">
+  <div class="container">
+    <div class="table-wrapper">
+
+      <!-- Edit Update Mode -->
+      <div class="form-wrapper " *ngIf="showForm" novalidate="novalidate">
+          <article class="card-body mx-auto" style="max-width: 400px;">
+              <h4 class="card-title mt-3 text-center">Create Account</h4>
+              <form [formGroup]="serviceForm">
+              <div class="form-group ">
+                <label>First Name</label>
+                    <input name="title" class="form-control" formControlName="firstName" placeholder="First Name" type="text">
+                  <div class="text-danger" *ngIf="!serviceForm.controls['firstName'].valid"> Required </div>
+                </div>
+              <div class="form-group ">
+                <label>Last Name</label>
+                    <input name="title" class="form-control" formControlName="lastName" placeholder="Last Name" type="text">
+                  <div class="text-danger" *ngIf="!serviceForm.controls['lastName'].valid"> Required </div>
+                </div>
+              <div class="form-group ">
+                <label>Job Title</label>
+                    <input name="title" class="form-control" formControlName="jobTitle" placeholder="Job Title" type="text">
+                  <div class="text-danger" *ngIf="!serviceForm.controls['jobTitle'].valid"> Required </div>
+                </div>
+
+                <div class="form-group ">
+                    <label>Status</label>
+
+                    <input name="status" class="form-control" formControlName="status" placeholder="status" type="text">
+                   <div class="text-danger" *ngIf="!serviceForm.controls['status'].valid"> Required </div>
+                </div> <!-- form-group// -->
+
+                <div class="form-group ">
+                    <label>Team</label>
+                  <input name="team" formControlName="team" class="form-control"  placeholder="Team" type="text">
+                  </div> <!-- form-group// -->
+
+                  <div class="form-group input-group">
+                    <div *ngIf="!this.editMode">
+                        <input type="submit" class="btn btn-success" value="Add" (click)="addService()">
+                    </div>
+                    <div *ngIf="this.editMode">
+                        <input type="submit" class="btn btn-success" value="Edit" (click)="editService()">
+                    </div>
+
+                    </div> <!-- form-group// -->
+                </form>
+    </article>
+    <pre>{{serviceForm.value | json}}</pre>
+      </div>
+
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Manage <b>Services</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a class="btn btn-success" (click)="displayForm()"><i class="material-icons"></i> <span>Add New
+                Service</span></a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="text-bold">
+            </th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Images</th>
+            <th>Edit/Delete</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of services; let i = index">
+            <td>
+              <span class="custom-checkbox">
+                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                <label for="checkbox1"></label>
+              </span>
+            </td>
+            <td>{{item.title}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.images}}</td>
+            <td>
+              <a (click)="showEditForm(item)" class="edit" ><i class="material-icons"
+                   title="Edit">&#xE254;</i></a>
+              <a (click)="deleteService(item.id)" class="delete" ><i class="material-icons"
+                   title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

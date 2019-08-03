@@ -1,0 +1,21 @@
+<div [class]='cols'>
+    <div class="form-group form-group-material" *ngIf="form" [formGroup]="form" [ngClass]="{'is-required': form.controls[controlName]
+    .errors?.required && !form.controls[controlName].dirty,
+    'has-error': form.controls[controlName].invalid && form.controls[controlName].dirty, 'has-success': form.controls[controlName]
+    .valid && required }">
+      <label [for]="controlName">{{label}}</label>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i [class]="icon"></i>
+        </span>
+        <input type="text" [maxlength]="maxlength" class="form-control"  [formControlName]="controlName"
+        [attr.name]="controlName" [title]='title' [attr.id]="controlName" [placeholder]="placeholder" (focus)="onFocus($event)">
+      </div>
+      <span *ngIf="control.invalid && (control.dirty || control.touched)">
+      <label [for]="controlName" *ngIf="control.errors.required" class="validation-error-label"> {{ errorMsg }} </label>
+      <label [for]="controlName" *ngIf="control.errors.pattern" class="validation-error-label"> {{ errorMsgPattern }} </label>
+      <label [for]="controlName" *ngIf="control.errors.maxlength" class="validation-error-label"> {{ errorMsgMaxLength }} </label>
+      <label [for]="controlName" *ngIf="control.errors.minlength" class="validation-error-label"> {{ errorMsgMinLength }} </label>
+  </span>
+    </div>
+  </div>

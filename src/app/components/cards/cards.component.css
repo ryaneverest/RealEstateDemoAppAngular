@@ -1,0 +1,8 @@
+.cards{
+  cursor: pointer !important;
+  font: Roboto,sans-serif,
+}
+
+.card-body {
+  padding: 0.25rem;
+}

@@ -1,0 +1,17 @@
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4 header-bg">
+      <div class="tabcontent">
+          <h1 class="header-title">Find Your Dream Home</h1>
+          <section class="search-sec">
+                              <div class="row">
+                                  <div class="col-lg-8 col-md-8 col-sm-12 p-0">
+                                      <input type="text" class="form-control search-slt" #userInput  (keydown.enter)="search()" placeholder="Address or Zip Code">
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                                      <button type="button" class="form-control btn-danger wrn-btn"  (click)="search()">Search</button>
+                                  </div>
+                              </div>
+          </section>
+      </div>
+
+    </header>
