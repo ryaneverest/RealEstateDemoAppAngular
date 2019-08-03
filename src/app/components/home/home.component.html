@@ -1,0 +1,26 @@
+<!-- Page Content -->
+<div class="container">
+  <app-header></app-header>
+<!-- Services -->
+
+<div class="feedback">
+  <div class="row">
+    <div class="service-title">
+      <p>Our Services</p>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4" *ngFor="let service of services">
+          <div class="card h-100">
+            <img class="card-img-top" src="/assets/images/services/{{service.images}}"  alt="">
+            <div class="card-body">
+              <h4 class="card-title">{{service.title}}</h4>
+              <p class="card-text">{{service.description}} </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+ </div>
+

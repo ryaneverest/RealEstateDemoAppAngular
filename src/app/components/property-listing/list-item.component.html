@@ -1,0 +1,29 @@
+<div class="container">
+
+    <section class="search-sec">
+        <div class="row" >
+            <div class="col-lg-3 col-md-3 col-sm-6 p-0">
+                <input type="text" class="form-control search-slt" [(ngModel)]="userInput" placeholder="Address or Zip Code">
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 p-0">
+                <button type="button" class="form-control btn-danger wrn-btn">Search</button>
+            </div>
+            <div class="col-sm-offset-2 col-lg-2 col-md-2 col-sm-6 p-0">
+                <button type="button" routerLink="/list/add"class="form-control btn-primary wrn-btn">Add Listing</button>
+            </div>
+        </div>
+</section>
+
+    <div class="main-container listing-fixed">
+        <!-- First row -->
+        <div class="row text-center ">
+          <!-- cards -->
+          <div class="col-sm-6 listing-scroll mb10">
+              <app-cards [lists]="lists"></app-cards>
+          </div>
+          <div class="col-sm-6">
+            <app-google-map [markers]="lists" (markerAdded)="getMarkersList($event)"></app-google-map>
+          </div>
+        </div>
+      </div>
+</div>

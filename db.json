@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "teamMember": [
+    {
+      "id": 1,
+      "firstName": "some comment",
+      "lastName": "dsfsf",
+      "jobTitle": "gfh ",
+      "status": " fh",
+      "team": "fh "
+    },
+    {
+      "id": 2,
+      "firstName": "some other comment",
+      "lastName": "sfaf",
+      "jobTitle": "fh ",
+      "status": "ffh ",
+      "team": "fh "
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

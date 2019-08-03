@@ -1,0 +1,16 @@
+<div class="map-container">
+  <agm-map (mapReady)="mapReady($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false"
+    [zoomControl]="false" (mapClick)="mapClicked($event)">
+
+    <div *ngIf="showMarker">
+      <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.id, i)"
+        [latitude]="m.latitude" [longitude]="m.longitude" [markerDraggable]="false">
+        <agm-info-window>
+          <strong>{{m.address.street}}</strong>
+        </agm-info-window>
+
+      </agm-marker>
+    </div>
+
+  </agm-map>
+</div>
