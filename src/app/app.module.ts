@@ -61,7 +61,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     ReactiveFormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBqkoBuaY6_T34Dxd9L3jvrriwLfSRwjNU'
+      apiKey: 'Your API Key'
     })
   ],
   providers: [ListingServiceService, UsersService, AccountGuard, ServicesCrudService, TeamService],
